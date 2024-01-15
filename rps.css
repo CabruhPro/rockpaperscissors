@@ -1,11 +1,50 @@
 .choicebutton {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width:20%;
+    border: 2px solid blue;
+    padding:2%;
+    font-size: small;
+    background-color: orangered;
+    border-radius: 12px;
+}
 
+.game{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 2px solid green;
+    gap: 16px;
+}
+
+#rounds{
+    width:32px;
+}
+
+img {
+    max-width: 90%;
+    border-radius: 12px;
+}
+
+p {
+    margin: 0px;
+    color:white;
 }
 
 .heading{
-
 }
 
 body{
-    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+body *{
+    border: 2px solid red;
 }

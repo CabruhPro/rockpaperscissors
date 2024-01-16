@@ -1,6 +1,7 @@
 //Rock paper scissors in the console
 
 //Globals
+let totalrounds;
 let rounds;
 let userchoice;
 let computerchoice;
@@ -11,7 +12,7 @@ let playing = false;
 
 let gamelog = document.getElementById("gamelog");
 let playprompt = document.createElement('li');
-playprompt.style = 'font-style: italic';
+playprompt.style = 'font-style: italic; color: gray';
 playprompt.textContent = 'Pick your weapon.';
 
 function getComputerChoice(){
@@ -47,23 +48,32 @@ function playRound(player, computer){
             outcome = "It's a tie!";
             break;
     }
-    playing=rounds>0;
+
+    playing=rounds>0 && 
+    Math.floor(totalrounds/2)+1!=playerScore &&
+    Math.floor(totalrounds/2)+1!=computerScore;
     return outcome;
 }
 
 //Start button begins the game
-startbutton=document.getElementById("startbutton");
+const startbutton=document.getElementById("startbutton");
 roundsinp=document.getElementById("roundsfield");
 startbutton.addEventListener('click', () =>{
-    playing=true;
-    playerScore=0;
-    computerScore=0;
-    rounds=roundsinp.value;
-    roundsinp.value='';
-    let roundannounce=document.createElement("li");
-    roundannounce.textContent="Playing to " + rounds + " rounds."
-    gamelog.appendChild(roundannounce);
-    gamelog.appendChild(playprompt);
+    if(roundsinp.value>0 && roundsinp.value%2==1){
+        while(gamelog.firstChild){
+            gamelog.removeChild(gamelog.firstChild);
+        }
+        playing=true;
+        playerScore=0;
+        computerScore=0;
+        totalrounds=roundsinp.value;
+        rounds=roundsinp.value;
+        roundsinp.value='';
+        let roundannounce=document.createElement("li");
+        roundannounce.textContent="Playing best of " + totalrounds + " rounds."
+        gamelog.appendChild(roundannounce);
+        gamelog.appendChild(playprompt);
+    }
 })
 
 //weapon buttons play the game until rounds are up
@@ -87,7 +97,8 @@ for (const button of buttonlist){
                 cscoreannounce.textContent = "Computer: " + computerScore;
                 let winnerannounce = document.createElement("li");
                 winnerannounce.textContent = 
-                playerScore>computerScore?"Player":"Computer"+" wins!";
+                (playerScore>computerScore?"Player":"Computer")+" wins!";
+                gamelog.appendChild(document.createElement("br"));
                 gamelog.appendChild(resultannounce);
                 gamelog.appendChild(pscoreannounce);
                 gamelog.appendChild(cscoreannounce);

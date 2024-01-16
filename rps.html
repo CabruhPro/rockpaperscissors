@@ -10,24 +10,28 @@
         <h1 class="heading">Let's play rock paper scissors</h1>
         <div class="game">
             <div id="rock" class="choicebutton">
-                <img src="images/bloodyrock.jpg" alt="bloodyrock.jpg" width="200px">
+                <img src="images/bloodyrock.jpg" 
+                alt="bloodyrock.jpg" width="200px">
                 <p>Rock</p>
             </div>
             <div id="paper" class="choicebutton">
-                <img src="images/bloodypaper.jpg" alt="bloodypaper.jpg" width="200px">
+                <img src="images/bloodypaper.jpg" 
+                alt="bloodypaper.jpg" width="200px">
                 <p>Paper</p>
             </div>
             <div id="scissors" class="choicebutton">
-                <img src="images/bloodyscissors.jpg" alt="bloodyscissors.jpg" width="200px">
+                <img src="images/bloodyscissors.jpg" 
+                alt="bloodyscissors.jpg" width="200px">
                 <p>Scissors</p>
             </div>
         </div>
         <div class="roundinp">
             <label for="rounds">Best of:</label>
-            <input type="number" id="roundsfield">
+            <input type="number" id="roundsfield" min="0">
             <input type="button" id="startbutton" value="Start!">
         </div>
-        <p id="prompt">To begin, set a number of rounds and click start.</p>
+        <p id="prompt">To begin, set to an odd 
+            number of rounds and click start.</p>
         <ul id="gamelog">
         </ul>
     </body>

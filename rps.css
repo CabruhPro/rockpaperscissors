@@ -61,5 +61,6 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    font-family: Impact;
+    font-family: sans-serif;
+    background-color: aquamarine;
 }

@@ -4,7 +4,6 @@
     justify-content: space-between;
     align-items: center;
     max-width:20%;
-    border: 2px solid blue;
     padding:2%;
     font-size: small;
     background-color: orangered;
@@ -15,11 +14,18 @@
     display:flex;
     flex-direction: row;
     justify-content: center;
-    border: 2px solid green;
     gap: 16px;
 }
 
-#rounds{
+.roundinp {
+    display: flex;
+    margin-top: 3%;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#roundsfield{
     width:32px;
 }
 
@@ -28,12 +34,24 @@ img {
     border-radius: 12px;
 }
 
-p {
+.choicebutton p {
     margin: 0px;
     color:white;
 }
 
+#prompt {
+    font-style:italic;
+    align-self: flex-start;
+}
+
+ul {
+    align-self: flex-start;
+    list-style-type: none;
+    padding: 0;
+}
+
 .heading{
+    color: orangered;
 }
 
 body{
@@ -43,8 +61,5 @@ body{
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-}
-
-body *{
-    border: 2px solid red;
+    font-family: Impact;
 }

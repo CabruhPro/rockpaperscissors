@@ -4,28 +4,31 @@
         <meta charset="UTF-8">
         <Title>Rock Paper Scissors JS</Title>
         <link rel="stylesheet" href="rps.css">
-        <script src="rockpaperscissors.js"></script>
+        <script src="rps.js" defer></script>
     </head>
     <body>
         <h1 class="heading">Let's play rock paper scissors</h1>
         <div class="game">
-            <div class="choicebutton">
+            <div id="rock" class="choicebutton">
                 <img src="images/bloodyrock.jpg" alt="bloodyrock.jpg" width="200px">
                 <p>Rock</p>
             </div>
-            <div class="choicebutton">
+            <div id="paper" class="choicebutton">
                 <img src="images/bloodypaper.jpg" alt="bloodypaper.jpg" width="200px">
                 <p>Paper</p>
             </div>
-            <div class="choicebutton">
+            <div id="scissors" class="choicebutton">
                 <img src="images/bloodyscissors.jpg" alt="bloodyscissors.jpg" width="200px">
                 <p>Scissors</p>
             </div>
         </div>
         <div class="roundinp">
-            <label for="rounds">Rounds:</label>
-            <input type="number" id="rounds">
-            <input type="submit" value="Start!">
+            <label for="rounds">Best of:</label>
+            <input type="number" id="roundsfield">
+            <input type="button" id="startbutton" value="Start!">
         </div>
+        <p id="prompt">To begin, set a number of rounds and click start.</p>
+        <ul id="gamelog">
+        </ul>
     </body>
 </html>
